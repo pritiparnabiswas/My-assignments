@@ -1,0 +1,167 @@
+C PROGRAM TO FIND RECURSIVE BINARY SEARCH
+#include <stdio.h>
+
+// Function to perform binary search
+int binarySearch(int arr[5], int low, int high, int x) {
+    if (high >= low) {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == x)
+            return mid;
+        if (arr[mid] > x)
+            return binarySearch(arr, low, mid - 1, x);
+        return binarySearch(arr, mid + 1, high, x);
+    }
+    return -1;
+}
+int main() {
+//    int arr[] = {2, 3, 4, 10, 20, 34, 44};
+	int arr[5];
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printf("Enter elements: ");
+	for(int i=0;i<5;i++){
+		scanf("%d",&arr[i]);
+	}
+    int x = 10;
+    int result = binarySearch(arr, 0, n - 1, x);
+    if (result == -1)
+        printf("Element not Found\n");
+    else
+        printf("Element Found\n");
+    return 0;
+}
+//REVERSED STRING WITHOUT STREEV
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int len, isPalindrome = 1;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    len = strlen(str);
+    for (int i = 0; i < len / 2; i++) {
+        if (str[i] != str[len - i - 1]) {
+           
+        }
+    }
+	printf("%s", str);
+
+    return 0;
+}
+//VOWEL,CONSTANT NUMBER
+#include<stdio.h>
+#include<string.h>
+int main(){
+	int vowels=0,consonants=0,num=0,spaces=0;
+	char s1[100];
+	gets(s1);
+	
+	for (int i = 0;s1[i] != '\0'; i++) {
+        char ch = s1[i];
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+            ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+            vowels++;
+        }
+        else if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+            consonants++;
+        }
+        else if (ch >= '0' && ch <= '9') {
+            num++;
+        }
+        else if (ch == ' ') {
+            spaces++;
+        }
+    }
+    printf("\nVowels: %d",vowels);
+    printf("\nConsonants: %d",consonants);
+    printf("\nNumbers: %d",num);
+    printf("\nWhite Spaces: %d",spaces);
+    return 0;
+}
+//ASCII VALUE
+#include<stdio.h>
+#include<string.h>
+int main(){
+	char s1[20];
+	gets(s1);
+	int i=0;
+	while(s1[i] != '\0'){
+		printf("ASCII value of %c = %d\n",s1[i],s1[i]);
+		i++;
+	}
+	return 0;
+}
+//BUBBLE SORTING
+#include <stdio.h>
+
+void bubble(int a[], int n) {
+    int i, j, t;
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - i - 1; j++) {
+            if (a[j] > a[j + 1]) {
+                t = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = t;
+            }
+        }
+    }
+}
+
+int main() {
+    int n = 5;
+    int a[] = {4, 5, 7, 9, 10};
+
+    bubble(a, n);
+
+    printf("Sorted array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}
+//PALLINDROME USING STRING
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+
+int main(void) {
+    char str1[80], str2[80];
+
+    printf("Enter the String: ");
+    scanf("%s", str1);
+
+    
+    strcpy(str2, str1);
+
+    
+    strrev(str1);
+
+    if (strcmp(str1, str2) == 0) {
+        printf("The String is Palindrome");
+    } else {
+        printf("The String is not Palindrome");
+    }
+
+    getch();
+    return 0;
+}
+//SUBSTRING
+#include<stdio.h>
+#include<string.h>
+int main(){
+	char s1[20];
+	char s2[20];
+	printf("Enter elements in main string: ");
+	gets(s1);
+	printf("Enter elements in sub string: ");
+	gets(s2);
+	
+	char *p = strstr(s1,s2);
+	printf("String Found\n");
+	printf("The sub string is: %s",s2);
+	
+	return 0;
+}
