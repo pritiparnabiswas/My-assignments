@@ -1,0 +1,58 @@
+//C programs to find size of the processor using pointer.
+#include <stdio.h>
+
+int main()
+{
+	int *ptr;
+	printf("size of processor's word(pointer size):%zu bytes\n",sizeof(ptr));
+	return 0;
+}
+
+//C program to find largest from 3 variable in one line.
+#include <stdio.h>
+int main()
+{
+	int a,b,c;
+	printf("Enter no.");
+	scanf("%d",&a);
+	printf("Enter no.");
+	scanf("%d",&b);
+	printf("Enter no.");
+	scanf("%d",&c);
+	int largest=(a>b)?(a>c?a:c):(b>c?b:c);
+	printf("The largest number is %d",largest);
+	return 0;
+}
+
+//Swap two numbers without using odd and minus operators as well as third variables and pointers.
+#include <stdio.h>
+int main()
+{
+	int a,b;
+	printf("Enter no.:");
+	scanf("%d",&a);
+	printf("Enter no.:");
+	scanf("%d",&b);
+	a^=b^=a^=b;
+	printf("%d \n",a);
+	printf("%d \n",b);
+	return 0;
+}
+
+//find even or odd without modulus.
+#include <stdio.h>
+int main()
+{
+	int num;
+	printf("Enter a number:");
+	scanf("%d",&num);
+	if (num&1)
+	{
+	  printf("%d is an odd number\n",num);
+    }
+    else
+    {
+      printf("%d is an even number\n",num);	
+	}
+	return 0;
+}
