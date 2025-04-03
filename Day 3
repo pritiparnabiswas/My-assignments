@@ -1,0 +1,163 @@
+//C Programs to find factorial using for loop
+#include <stdio.h>
+int main()
+{
+	int num,factorial=1;
+	printf("Enter a number:");
+	scanf("%d",&num);
+	if (num<0)
+	{
+		printf("Factorial of a negative number doesn't exist");
+	}
+	else
+	{
+		for (int i=1;i<=num;i++)
+		{
+			 factorial*= i;
+		}
+		printf("Factorial of %d is:%d\n",num,factorial);
+	}
+	return 0;
+}
+
+//C Programs to find fibonacci using for loop.
+#include <stdio.h>
+int main()
+{
+	int n,i;
+	long long int fib[50];
+	printf("Enter the number of terms:");
+	scanf("%d",&n);
+	fib[0]=0;
+	fib[1]=1;
+	printf("Fibonacci series: %d,%d", fib[0],fib[1]);
+		for (int i=2;i<n;i++)
+		{
+			 fib[i]=fib[i-1]+fib[i-2];
+			 printf(",%d",fib[i]);
+		}
+	printf("\n");
+	return 0;
+}
+
+//C Programs to Count the number of digit using loop.
+#include <stdio.h>
+int main()
+{
+	int num,count=0;
+	printf("Enter a number:");
+	scanf("%d",&num);
+	while (num!=0)
+	{
+		num/=10;
+		count++;
+	}
+		printf("Number of digits:%d\n",count);
+	return 0;
+}
+
+//C Programs to find prime numbers,
+#include <stdio.h>
+int main() {
+    int num, i, flag = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num <= 1) {
+        printf("%d is not a prime number.\n", num);
+    } else {
+        for (i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                flag = 1;
+                break;
+            }
+        }
+
+        if (flag == 0) {
+            printf("%d is a prime number.\n", num);
+        } else {
+            printf("%d is not a prime number.\n", num);
+        }
+    }
+
+    return 0;
+}
+
+//C Programs to find Armstrong Number.
+#include <stdio.h>
+int main() {
+    int num, original, remainder, result = 0, n = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    original = num;
+
+    // Count the number of digits
+    while (original != 0) {
+        original /= 10;
+        n++;
+    }
+
+    original = num;
+
+    // Calculate the Armstrong number
+    while (original != 0) {
+        remainder = original % 10;
+        result += (int) (remainder * pow(remainder, n));
+        original /= 10;
+    }
+
+    if (result == num) {
+        printf("%d is an Armstrong number.\n", num);
+    } else {
+        printf("%d is not an Armstrong number.\n", num);
+    }
+
+    return 0;
+}
+
+//C Program to reverse a number.
+#include <stdio.h>
+int main() {
+    int num, reverse = 0, remainder;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    while (num != 0) {
+        remainder = num % 10;
+        reverse = reverse * 10 + remainder;
+        num /= 10;
+    }
+
+    printf("Reversed number: %d\n", reverse);
+
+    return 0;
+}
+
+//Check whether the number is pallindrome or not.
+#include <stdio.h>
+int main() {
+    int num, reverse = 0, remainder, original;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    original = num;
+
+    while (num != 0) {
+        remainder = num % 10;
+        reverse = reverse * 10 + remainder;
+        num /= 10;
+    }
+
+    if (original == reverse) {
+        printf("%d is a palindrome number.\n", original);
+    } else {
+        printf("%d is not a palindrome number.\n", original);
+    }
+
+    return 0;
+}
