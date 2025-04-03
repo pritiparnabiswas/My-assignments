@@ -1,0 +1,133 @@
+// Recursive function to calculate GCD
+#include <stdio.h>
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    } else {
+        return gcd(b, a % b);
+    }
+}
+int main() {
+    int num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    printf("GCD of %d and %d is: %d\n", num1, num2, gcd(num1, num2));
+return 0;
+}
+
+//CALL BY VALUE & CALL BY REFERENCE TO SWAP NUMBERS IN A SAME PROGRAM.
+#include <stdio.h>
+// Function to swap two numbers using call by value
+void swap_value(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+    printf("Inside swap_value function: a = %d, b = %d\n", a, b);
+}
+
+// Function to swap two numbers using call by reference
+void swap_reference(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+    printf("Inside swap_reference function: a = %d, b = %d\n", *a, *b);
+}
+
+int main() {
+    int num1 = 10, num2 = 20;
+
+    printf("Before swapping (call by value): num1 = %d, num2 = %d\n", num1, num2);
+    swap_value(num1, num2);
+    printf("After swapping (call by value): num1 = %d, num2 = %d\n", num1, num2);
+
+    printf("\nBefore swapping (call by reference): num1 = %d, num2 = %d\n", num1, num2);
+    swap_reference(&num1, &num2);
+    printf("After swapping (call by reference): num1 = %d, num2 = %d\n", num1, num2);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+// Function to print a 2D array
+void printMatrix(int matrix[][3], int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// Function to transpose a 2D array
+void transposeMatrix(int matrix[][3], int rows, int cols) {
+    int transpose[cols][rows];
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            transpose[j][i] = matrix[i][j];
+        }
+    }
+
+    // Print the transposed matrix
+    printf("Transposed Matrix:\n");
+    for (int i = 0; i < cols; i++) {
+        for (int j = 0; j < rows; j++) {
+            printf("%d ", transpose[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int rows = 3;
+    int cols = 3;
+    int matrix[rows][cols] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    printf("Original Matrix:\n");
+    printMatrix (matrix, rows, cols)
+
+    transposeMatrix(matrix, rows, cols);
+
+    return 0;
+}
+#include <stdio.h>
+
+// Function to add two arrays
+void addArrays(int arr1[], int arr2[], int arr3[], int size) {
+    for (int i = 0; i < size; i++) {
+        arr3[i] = arr1[i] + arr2[i];
+    }
+}
+
+// Function to print an array
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int size = 5;
+    int arr1[] = {1, 2, 3, 4, 5};
+    int arr2[] = {5, 4, 3, 2, 1};
+    int arr3[size];  // Array to store the sum
+
+    printf("Array 1: ");
+    printArray(arr1, size);
+
+    printf("Array 2: ");
+    printArray(arr2, size);
+
+    addArrays(arr1, arr2, arr3, size);
+
+    printf("Sum of Array 1 and Array 2: ");
+    printArray(arr3, size);
+    return 0;
+}
