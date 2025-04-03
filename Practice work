@@ -1,0 +1,843 @@
+//C programs to find size of the processor using pointer.
+#include <stdio.h>
+
+int main()
+{
+	int *ptr;
+	printf("size of processor's word(pointer size):%zu bytes\n",sizeof(ptr));
+	return 0;
+}
+
+//C program to find largest from 3 variable in one line.
+#include <stdio.h>
+int main()
+{
+	int a,b,c;
+	printf("Enter no.");
+	scanf("%d",&a);
+	printf("Enter no.");
+	scanf("%d",&b);
+	printf("Enter no.");
+	scanf("%d",&c);
+	int largest=(a>b)?(a>c?a:c):(b>c?b:c);
+	printf("The largest number is %d",largest);
+	return 0;
+}
+
+//Swap two numbers without using odd and minus operators as well as third variables and pointers.
+#include <stdio.h>
+int main()
+{
+	int a,b;
+	printf("Enter no.:");
+	scanf("%d",&a);
+	printf("Enter no.:");
+	scanf("%d",&b);
+	a^=b^=a^=b;
+	printf("%d \n",a);
+	printf("%d \n",b);
+	return 0;
+}
+
+//find even or odd without modulus.
+#include <stdio.h>
+int main()
+{
+	int num;
+	printf("Enter a number:");
+	scanf("%d",&num);
+	if (num&1)
+	{
+	  printf("%d is an odd number\n",num);
+    }
+    else
+    {
+      printf("%d is an even number\n",num);	
+	}
+	return 0;
+}
+
+//C program to check head or tail
+#include <stdio.h>
+int main()
+{
+	char head;
+	char h;
+	printf("Enter character for head:");
+	scanf("%c",&head);
+	if(head=='h')
+	printf("Head");
+	else
+	printf("Tail");
+	return 0;
+}
+
+//C program to check the leap year or not
+#include <stdio.h>
+int main()
+{
+	int Year;
+	printf("Enter the Year:");
+	scanf("%d",&Year);
+	if(Year%400==0)
+	printf("%d is Leap Year",Year);
+	else if(Year%100!=0)
+	printf("%d is not Leap Year",Year);
+	else if(Year%4==0)
+	printf("%d is Leap Year",Year);
+	else
+	printf("%d is not Leap Year",Year);
+	return 0;
+}
+
+//C program to find that the roll number 20 is present or not.
+#include <stdio.h>
+int main()
+{
+	int roll_num;
+	printf("Enter your roll number:");
+	scanf("%d",&roll_num);
+	if(roll_num==20)
+	printf("The specified roll number 20 is present");
+	return 0;
+}
+
+//C programs to print ADAMAS UNIVERSITY
+#include <stdio.h>
+int main()
+{
+	printf("Adamas University");
+	return 0;
+}
+
+//C programs to find greatest of 3 number using ladder if-else
+#include <stdio.h>
+int main()
+{
+	int a,b,c;
+	printf("Enter the value of three number:");
+	scanf("%d %d %d",&a,&b,&c);
+	if(a>b && a>c)
+	{
+		printf("a is maximum");
+	}
+	else if("b>a && b>c")
+	{
+		printf("b is maximum");
+	}
+	else
+	{
+		printf("c is maximum");
+	}
+	return 0;
+}
+
+//C programs to find greatest of 3 number using Nested if-else
+#include <stdio.h>
+int main()
+{
+	int a,b,c;
+	printf("Enter the value of three number:");
+	scanf("%d %d %d",&a,&b,&c);
+	if (a>b)
+	{
+	if (a>c)	
+	printf("a is maximum");
+	else 
+	printf("c is maximum");
+    }
+	else
+	{
+	if (b>c)	
+	printf("b is maximum");
+	else 
+	printf("b is maximum");
+	}
+	return 0;
+}
+
+
+//C Programs to find factorial using for loop
+#include <stdio.h>
+int main()
+{
+	int num,factorial=1;
+	printf("Enter a number:");
+	scanf("%d",&num);
+	if (num<0)
+	{
+		printf("Factorial of a negative number doesn't exist");
+	}
+	else
+	{
+		for (int i=1;i<=num;i++)
+		{
+			 factorial*= i;
+		}
+		printf("Factorial of %d is:%d\n",num,factorial);
+	}
+	return 0;
+}
+
+//C Programs to find fibonacci using for loop.
+#include <stdio.h>
+int main()
+{
+	int n,i;
+	long long int fib[50];
+	printf("Enter the number of terms:");
+	scanf("%d",&n);
+	fib[0]=0;
+	fib[1]=1;
+	printf("Fibonacci series: %d,%d", fib[0],fib[1]);
+		for (int i=2;i<n;i++)
+		{
+			 fib[i]=fib[i-1]+fib[i-2];
+			 printf(",%d",fib[i]);
+		}
+	printf("\n");
+	return 0;
+}
+
+//C Programs to Count the number of digit using loop.
+#include <stdio.h>
+int main()
+{
+	int num,count=0;
+	printf("Enter a number:");
+	scanf("%d",&num);
+	while (num!=0)
+	{
+		num/=10;
+		count++;
+	}
+		printf("Number of digits:%d\n",count);
+	return 0;
+}
+
+//C Programs to find prime numbers,
+#include <stdio.h>
+int main() {
+    int num, i, flag = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num <= 1) {
+        printf("%d is not a prime number.\n", num);
+    } else {
+        for (i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                flag = 1;
+                break;
+            }
+        }
+
+        if (flag == 0) {
+            printf("%d is a prime number.\n", num);
+        } else {
+            printf("%d is not a prime number.\n", num);
+        }
+    }
+
+    return 0;
+}
+
+//C Programs to find Armstrong Number.
+#include <stdio.h>
+int main() {
+    int num, original, remainder, result = 0, n = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    original = num;
+
+    // Count the number of digits
+    while (original != 0) {
+        original /= 10;
+        n++;
+    }
+
+    original = num;
+
+    // Calculate the Armstrong number
+    while (original != 0) {
+        remainder = original % 10;
+        result += (int) (remainder * pow(remainder, n));
+        original /= 10;
+    }
+
+    if (result == num) {
+        printf("%d is an Armstrong number.\n", num);
+    } else {
+        printf("%d is not an Armstrong number.\n", num);
+    }
+
+    return 0;
+}
+
+//C Program to reverse a number.
+#include <stdio.h>
+int main() {
+    int num, reverse = 0, remainder;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    while (num != 0) {
+        remainder = num % 10;
+        reverse = reverse * 10 + remainder;
+        num /= 10;
+    }
+
+    printf("Reversed number: %d\n", reverse);
+
+    return 0;
+}
+
+//Check whether the number is pallindrome or not.
+#include <stdio.h>
+int main() {
+    int num, reverse = 0, remainder, original;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    original = num;
+
+    while (num != 0) {
+        remainder = num % 10;
+        reverse = reverse * 10 + remainder;
+        num /= 10;
+    }
+
+    if (original == reverse) {
+        printf("%d is a palindrome number.\n", original);
+    } else {
+        printf("%d is not a palindrome number.\n", original);
+    }
+
+    return 0;
+}
+
+
+
+// Function to calculate factorial
+#include <stdio.h>
+long factorial(int num) {
+    if (num == 0 || num == 1) {
+        return 1;
+    } else {
+        return num * factorial(num - 1);
+    }
+}
+
+int main() {
+    int num;
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Factorial is not defined for negative numbers.");
+    } else {
+        printf("Factorial of %d = %ld\n", num, factorial(num));
+    }
+
+    return 0;
+}
+
+// Recursive function to calculate factorial
+#include <stdio.h>
+long factorial(int num) {
+    if (num == 0 || num == 1) {
+        return 1;
+    } else {
+        return num * factorial(num - 1);
+    }
+}
+
+int main() {
+    int num;
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Factorial is not defined for negative numbers.");
+    } else {
+        printf("Factorial of %d = %ld\n", num, factorial(num));
+    }
+
+    return 0;
+}
+
+// Function to calculate Fibonacci series
+#include <stdio.h>
+int fibonacci(int n) {
+    if (n == 0 || n == 1) {
+        return n;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci series: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", fibonacci(i));
+    }
+
+    return 0;
+}
+
+// Recursive function to calculate Fibonacci series
+#include <stdio.h>
+int fibonacci(int n) {
+    if (n == 0 || n == 1) {
+        return n;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci series: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", fibonacci(i));
+    }
+
+    return 0;
+}
+
+
+// Recursive function to calculate GCD
+#include <stdio.h>
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    } else {
+        return gcd(b, a % b);
+    }
+}
+int main() {
+    int num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    printf("GCD of %d and %d is: %d\n", num1, num2, gcd(num1, num2));
+return 0;
+}
+
+//CALL BY VALUE & CALL BY REFERENCE TO SWAP NUMBERS IN A SAME PROGRAM.
+#include <stdio.h>
+// Function to swap two numbers using call by value
+void swap_value(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+    printf("Inside swap_value function: a = %d, b = %d\n", a, b);
+}
+
+// Function to swap two numbers using call by reference
+void swap_reference(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+    printf("Inside swap_reference function: a = %d, b = %d\n", *a, *b);
+}
+
+int main() {
+    int num1 = 10, num2 = 20;
+
+    printf("Before swapping (call by value): num1 = %d, num2 = %d\n", num1, num2);
+    swap_value(num1, num2);
+    printf("After swapping (call by value): num1 = %d, num2 = %d\n", num1, num2);
+
+    printf("\nBefore swapping (call by reference): num1 = %d, num2 = %d\n", num1, num2);
+    swap_reference(&num1, &num2);
+    printf("After swapping (call by reference): num1 = %d, num2 = %d\n", num1, num2);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+// Function to print a 2D array
+void printMatrix(int matrix[][3], int rows, int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// Function to transpose a 2D array
+void transposeMatrix(int matrix[][3], int rows, int cols) {
+    int transpose[cols][rows];
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            transpose[j][i] = matrix[i][j];
+        }
+    }
+
+    // Print the transposed matrix
+    printf("Transposed Matrix:\n");
+    for (int i = 0; i < cols; i++) {
+        for (int j = 0; j < rows; j++) {
+            printf("%d ", transpose[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int rows = 3;
+    int cols = 3;
+    int matrix[rows][cols] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    printf("Original Matrix:\n");
+    printMatrix (matrix, rows, cols)
+
+    transposeMatrix(matrix, rows, cols);
+
+    return 0;
+}
+#include <stdio.h>
+
+// Function to add two arrays
+void addArrays(int arr1[], int arr2[], int arr3[], int size) {
+    for (int i = 0; i < size; i++) {
+        arr3[i] = arr1[i] + arr2[i];
+    }
+}
+
+// Function to print an array
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int size = 5;
+    int arr1[] = {1, 2, 3, 4, 5};
+    int arr2[] = {5, 4, 3, 2, 1};
+    int arr3[size];  // Array to store the sum
+
+    printf("Array 1: ");
+    printArray(arr1, size);
+
+    printf("Array 2: ");
+    printArray(arr2, size);
+
+    addArrays(arr1, arr2, arr3, size);
+
+    printf("Sum of Array 1 and Array 2: ");
+    printArray(arr3, size);
+    return 0;
+}
+
+//ADD 2 ARRAYS
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the size of the arrays: ");
+    scanf("%d", &n);
+
+    int arr1[n], arr2[n], sum[n];
+
+    printf("Enter elements of array 1: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+    printf("Enter elements of array 2: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr2[i]);
+    }
+
+    // Add the two arrays
+    for (int i = 0; i < n; i++) {
+        sum[i] = arr1[i] + arr2[i];
+    }
+
+    printf("Sum of the two arrays: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", sum[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+int main() {
+    int n;
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Initialize max and min with the first element
+    int max = arr[0];
+    int min = arr[0];
+
+    // Find max and min
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+
+    printf("Maximum element: %d\n", max);
+    printf("Minimum element: %d\n", min);
+
+    return 0;
+}
+int linearSearch(int arr[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target) {
+            return i; // Return the index of the target element
+        }
+    }
+    return -1; // Return -1 if the target element is not found
+}
+
+int main() {
+    int n;
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int target;
+    printf("Enter the target element: ");
+    scanf("%d", &target);
+
+    int result = linearSearch(arr, n, target);
+
+    if (result == -1) {
+        printf("Target element not found in the array.\n");
+    } else {
+        printf("Target element found at index %d.\n", result);
+    }
+
+    return 0;
+}
+
+int linearSearch(int arr[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target) {
+            return i; // Return the index of the target element
+        }
+    }
+    return -1; // Return -1 if the target element is not found
+}
+
+C PROGRAM TO IMPLEMENT LINEAR SEARCH
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int target;
+    printf("Enter the target element: ");
+    scanf("%d", &target);
+
+    int result = linearSearch(arr, n, target);
+
+    if (result == -1) {
+        printf("Target element not found in the array.\n");
+    } else {
+        printf("Target element found at index %d.\n", result);
+    }
+
+    return 0;
+}
+C PROGRAM TO IMPLEMENT BINARY SEARCH
+#include <stdio.h>
+
+int binarySearch(int arr[], int n, int target) {
+    int low = 0;
+    int high = n - 1;
+
+    while (low <= high) {
+        int mid = (low + high) / 2;
+
+        if (arr[mid] == target) {
+            return mid; // Return the index of the target element
+        } else if (arr[mid] < target) {
+            low = mid + 1; // Search in the right half
+        } else {
+            high = mid - 1; // Search in the left half
+        }
+    }
+
+    return -1; // Return -1 if the target element is not found
+}
+
+int main() {
+    int n;
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Enter %d elements in ascending order:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int target;
+    printf("Enter the target element: ");
+    scanf("%d", &target);
+
+    int result = binarySearch(arr, n, target);
+
+    if (result == -1) {
+        printf("Target element not found in the array.\n");
+    } else {
+        printf("Target element found at index %d.\n", result);
+    }
+
+    return 0;
+}
+
+C PROGRAM WHICH WILL ADD TWO DISTANCES GIVEN IN FEET USING STRUCTURE
+#include <stdio.h>
+// Define a structure to represent distance in feet
+typedef struct {
+    int feet;
+} Distance;
+
+// Function to add two distances
+Distance addDistances(Distance d1, Distance d2) {
+    Distance sum;
+    sum.feet = d1.feet + d2.feet;
+    return sum;
+}
+
+int main() {
+    // Declare two distances
+    Distance d1, d2;
+
+    // Input the distances
+    printf("Enter distance 1 in feet: ");
+    scanf("%d", &d1.feet);
+
+    printf("Enter distance 2 in feet: ");
+    scanf("%d", &d2.feet);
+
+    // Add the distances
+    Distance sum = addDistances(d1, d2);
+
+    // Print the result
+    printf("Sum of the distances: %d feet\n", sum.feet);
+
+    return 0;
+
+C PROGRAM TO TAKE 5 BOOK'S NAME,ISBN NUMBER,PRICE USING STRUCTURE.
+}#include <stdio.h>
+#include <string.h>
+
+// Define a structure to represent a book
+typedef struct {
+    char name[50];
+    char isbn[20];
+    float price;
+} Book;
+
+int main() {
+    // Declare an array of 5 books
+    Book books[5];
+
+    // Input the book details
+    for (int i = 0; i < 5; i++) {
+        printf("Enter book %d details:\n", i + 1);
+        printf("Name: ");
+        fgets(books[i].name, sizeof(books[i].name), stdin);
+        books[i].name[strcspn(books[i].name, "\n")] = 0; // Remove the newline character
+
+        printf("ISBN: ");
+        fgets(books[i].isbn, sizeof(books[i].isbn), stdin);
+        books[i].isbn[strcspn(books[i].isbn, "\n")] = 0; // Remove the newline character
+
+        printf("Price: ");
+        scanf("%f", &books[i].price);
+        getchar(); // Consume the newline character left in the input buffer
+    }
+
+    // Print the book details
+    printf("\nBook Details:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Book %d:\n", i + 1);
+        printf("Name: %s\n", books[i].name);
+        printf("ISBN: %s\n", books[i].isbn);
+        printf("Price: %.2f\n\n", books[i].price);
+    }
+
+    return 0;
+}
+
+C PROGRAM TO FIND RECURSIVE BINARY SEARCH
+#include <stdio.h>
+
+// Function to perform binary search
+int binarySearch(int arr[5], int low, int high, int x) {
+    if (high >= low) {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == x)
+            return mid;
+        if (arr[mid] > x)
+            return binarySearch(arr, low, mid - 1, x);
+        return binarySearch(arr, mid + 1, high, x);
+    }
+    return -1;
+}
+int main() {
+//    int arr[] = {2, 3, 4, 10, 20, 34, 44};
+	int arr[5];
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printf("Enter elements: ");
+	for(int i=0;i<5;i++){
+		scanf("%d",&arr[i]);
+	}
+    int x = 10;
+    int result = binarySearch(arr, 0, n - 1, x);
+    if (result == -1)
+        printf("Element not Found\n");
+    else
+        printf("Element Found\n");
+    return 0;
+}
